@@ -1,0 +1,20 @@
+
+- name: install mysql
+  apt: name={{ item }} 
+  loop: 
+   - mysql-server 
+   - mysql-client
+- name: service my sql start 
+  service: 
+    name: mysql
+    state: started
+    enabled: yes
+- name: insert in my sql
+  mysql_db: name={{ db_name }} state=persent
+- name: create user 
+  mysql_user: 
+    name: "{{ db_user }}"
+    password: "{{ db_password }}"
+    priv: "*.*:ALL"
+    state: persent
+    host: '%'

@@ -1,0 +1,11 @@
+- name: setup my sql and write sql 
+  become: yes
+  hosts: workers
+  vars: 
+     db_name: employ_db
+     db_user: db_user
+     db_password: Passw0rd
+  roles:
+    - mysql_db
+    - flask_web
+
