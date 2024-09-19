@@ -1,0 +1,19 @@
+-  
+   name: Play1
+   hosts: all
+   become: yes
+
+   tasks:
+     - name: add DNS 403
+       lineinfile:
+        path: /etc/resolv.conf
+        line: nameserver 10.202.10.202 | 
+              nameserver 10.202.10.102
+     - name: install net-tools
+       apt: 
+        # update_cache: yes
+        name: net-tools
+     - name: get ip 
+       command:  ip a 
+     - name: get ping 
+       ping: 

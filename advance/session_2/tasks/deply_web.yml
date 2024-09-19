@@ -1,0 +1,8 @@
+- name: install my dependecies
+  apt: name={{ item }} 
+  loop: 
+   - python 
+   - python-setuptools
+   - python-dev 
+   - build-essential
+   - python-pip

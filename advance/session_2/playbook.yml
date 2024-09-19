@@ -1,0 +1,11 @@
+- name: setup my sql and write sql 
+  become: yes
+  hosts: worker1
+  vars: 
+     db_name: employ_db
+     db_user: db_user
+     db_password: Passw0rd
+  tasks: 
+    - include: task/deply_db.yml
+    - include: task/deply_web.yml
+
