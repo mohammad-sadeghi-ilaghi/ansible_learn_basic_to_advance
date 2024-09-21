@@ -1,0 +1,8 @@
+---
+# vars file for docker_install
+
+ip_nexus: "10.10.10.134:8081"
+ports: 
+  - 8081
+  - 5000
+  - 5001
